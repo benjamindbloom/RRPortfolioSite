@@ -68,6 +68,25 @@
 								});
 
 		});
+		
+		function ChangeMainBlock(lnk){
+		
+			$.ajax({
+					  url: lnk.href,
+					  success: function(data) {
+					  	//alert(lnk.href + "\r\n" + data);
+					  	$('.featuresPager').hide();
+						$('#MainSlider').html('');
+						$('#MainSlider').css({'background-color':'#666'});
+						$('#MainSlider').animate({
+												height: '650px'						
+												}, 1500, function() {$('#MainSlider').html(data);}); 
+						
+					  }
+					});
+		}
+		
+		
 	</script>
 </head>
 <body>
@@ -83,7 +102,7 @@
 <div class="row">
 	<div class="grid_12 RRMenu">
 		<ul>
-		<li><a href="#">Menu</a></li>
+		<li><a href="printportfolio.html" onClick="ChangeMainBlock(this);return false;">Print Portfolio</a></li>
 		<li><a href="#">Menu</a></li>
 		<li><a href="#">Menu</a></li>
 		<li><a href="#">Menu</a></li>
@@ -94,14 +113,17 @@
 
 <div class="row">
 	<div class="grid_12 featureContainer" >
-		<div class="features">		
-
+		<div class="features" id="MainSlider">		
 			<img src="http://placehold.it/960x190/111111" style="width: 100%;"/>
 			<img src="http://placehold.it/960x190/222222" style="width: 100%;"/>
 			<img src="http://placehold.it/960x190/333333" style="width: 100%;"/>
 			<img src="http://placehold.it/960x190/444444" style="width: 100%;"/>
 		</div>
 		<div class="featuresPager"></div>
+	</div>
+	
+	<div class="grid_12 result" style="display: none;">
+	
 	</div>
 </div>
 
@@ -133,154 +155,18 @@
 
 	</div>	
 </div>
-<div class="row">
-	<div class="grid_4"><span class="example">4</span></div>
-	<div class="grid_8"><span class="example">8</span></div>
-</div>
-<div class="row">
-	<div class="grid_6"><span class="example">6</span></div>
-	<div class="grid_6"><span class="example">6</span></div>
-</div>
-<div class="row base">
-	<div class="grid_12"><span class="example">12</span></div>
-</div>
-
-<div class="row">
-	<div class="grid_12">
-		<h2>Offsetting columns</h2>
-		<hr>
-	</div>
-</div>
-<div class="row top">
-	<div class="grid_4"><span class="example">4</span></div>
-	<div class="grid_4 offset_4"><span class="example">4 with 4 spacing</span></div>
-</div>
-<div class="row">
-	<div class="grid_3 offset_3"><span class="example">3</span></div>
-	<div class="grid_3 offset_3"><span class="example">3 with 3 spacing</span></div>
-</div>
-<div class="row base">
-	<div class="grid_8 offset_4"><span class="example">8 with 4 spacing</span></div>
-</div>
-
-<div class="row">
-	<div class="grid_12">
-		<h1>Typography & Bullets</h1>
-		<hr />
-	</div>
-</div>
-<div class="row">
-	<div class="grid_6">
-		<p class="intro">This paragraph is using a class called <code>.intro</code> which makes the font-size & line-height 130% and is perfect introduction text that doesn't need to be a H1.</p>
-		<p><a href="#" class="btn">This is a Button..!</a></p>
-	</div>
-	<div class="grid_3">
-		<p><code>&lt;strong&gt;</code> <strong>This text is rendered as bold.</strong></p>
-		<p><code>&lt;em&gt;</code> <em>This text is rendered as italicized.</em></p>
-		<p><code>&lt;small&gt;</code> <small>This text is rendered for fine print.</small></p>
-	</div>
-	<div class="grid_3">
-		<p><code>&lt;sup&gt;</code> This text is rendered as <sup>Superscript</sup></p>
-		<p><code>&lt;sub&gt;</code> This text is rendered as <sub>Subscript</sub></p>
-		<p><code>.highlight</code> This text is <span class="highlight">Highlighted</span></sub></p>
-	</div>
-</div>
-
-<div class="row">
-	<div class="grid_12"><hr /></div>
-</div>
 
 
-<div class="row">	
-	<div class="grid_3">
-		<h4>Normal Bullets (<em>Custom Image</em>)</h4>
-		<ul>
-			<li>Cras mattis consectetur purus sit amet fermentum.</li>
-			<li>
-				Donec ullamcorper nulla non metus auctor fringilla.
-				<ul>
-					<li>Aenean eu leo quam.</li>
-					<li>Pellentesque ornare sem lacinia quam venenatis vestibulum.</li>
-					<li>Nullam quis risus eget urna mollis ornare vel eu leo.</li>
-				</ul>
-			</li>
-			<li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-		</ul>
-		<p>For standard <code>&lt;ul&gt;</code> bullet ponts ive replace the normal dot with a graphic which can be changes easily</p>
-		<blockquote>
-			&lt;ul&gt;<br />
-			<span></span>&lt;li&gt;Your text here&lt;/li&gt;<br />
-			&lt;/ul&gt;
-		</blockquote>
-	</div>
-	
-	<div class="grid_3">
-		<h4>Ordered Bullets</h4>
-		<ol class="square">
-			<li>Cras mattis consectetur purus sit amet fermentum.</li>
-			<li>
-				Donec ullamcorper nulla non metus auctor fringilla.
-				<ol>
-					<li>Aenean eu leo quam.</li>
-					<li>Pellentesque ornare sem lacinia quam venenatis vestibulum.</li>
-					<li>Nullam quis risus eget urna mollis ornare vel eu leo.</li>
-				</ol>
-			</li>
-			<li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-		</ol>
-		<p>As with <code>&lt;ul&gt;</code> the ordered lists <code>&lt;ol&gt;</code> have had some extra CSS added to them so they are that little bit nicer to look at.</p>
-		<blockquote>
-			&lt;ol&gt;<br />
-			<span></span>&lt;li&gt;Your text here&lt;/li&gt;<br />
-			&lt;/ol&gt;
-		</blockquote>
-	</div>
+<div class="row footer">
 
-	<div class="grid_3">
-		<h4>Round Bullets</h4>
-		<ul class="circle">
-			<li>Cras mattis consectetur purus sit amet fermentum.</li>
-			<li>
-				Donec ullamcorper nulla non metus auctor fringilla.
-				<ul>
-					<li>Aenean eu leo quam.</li>
-					<li>Pellentesque ornare sem lacinia quam venenatis vestibulum.</li>
-					<li>Nullam quis risus eget urna mollis ornare vel eu leo.</li>
-				</ul>
-			</li>
-			<li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-		</ul>
-		<p>For circular bullet point all you need to do is add the class <code>.circle</code> to the  <code>&lt;ul&gt;</code></p>
-		<blockquote>
-			&lt;ul class="circle"&gt;<br />
-			<span></span>&lt;li&gt;Your text here&lt;/li&gt;<br />
-			&lt;/ul&gt;
-		</blockquote>
+	<div class="grid_10">
+	&copy; 2012 Ryan Royer, all rights reserved.<br/>Stealing is mean, please don't take things without permission.
 	</div>
-	
-	<div class="grid_3">
-		<h4>Square Bullets</h4>
-		<ul class="square">
-			<li>Cras mattis consectetur purus sit amet fermentum.</li>
-			<li>
-				Donec ullamcorper nulla non metus auctor fringilla.
-				<ul>
-					<li>Aenean eu leo quam.</li>
-					<li>Pellentesque ornare sem lacinia quam venenatis vestibulum.</li>
-					<li>Nullam quis risus eget urna mollis ornare vel eu leo.</li>
-				</ul>
-			</li>
-			<li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-		</ul>
-		<p>For square bullet point all you need to do is add the class <code>.square</code> to the <code>&lt;ul&gt;</code></p>
-		<blockquote>
-			&lt;ul class="square"&gt;<br />
-			<span></span>&lt;li&gt;Your text here&lt;/li&gt;<br />
-			&lt;/ul&gt;
-		</blockquote>
+	<div class="grid_2">
+		<div class="mirror">R</div>
+        <div style="display: inline-block">R</div>
 	</div>
 </div>
-
 </div><!-- rrContainer row -->
 </div><!-- rrContainer -->
 

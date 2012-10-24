@@ -74,3 +74,18 @@ h1 {
 .featuresPager a { margin: 5px; background: #333; width: 10px; height: 10px; display: block; float: left; border-radius: 5px; border: 2px solid #999;}
 .featuresPager a.activeSlide { background: #999 }
 .featuresPager a:focus { outline: none; }
+
+
+.footer {
+	color: white!important;
+}
+
+.mirror {
+display: inline-block;            
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
