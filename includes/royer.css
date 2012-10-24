@@ -1,0 +1,76 @@
+body {
+	background-color: #320202; /* Old browsers */
+	background: url(../images/rroyer_mountains.jpg), #320202;;
+	
+	background-position: top; 
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+	
+	
+	font:11px "Arial", Helvetica, sans-serif; 
+	color:rgb(223,137,44);
+
+}
+
+p{ line-height: 20px;}
+
+h1 {
+	color: white;
+	font-family: "Arial", helvetica, sans-serif;
+	font-size: 15px;
+	text-transform:uppercase;
+}
+.RRContainer {
+	background-color: #111;
+}
+.RRFeatured {
+	border: 1px solid rgb(73,38,9);
+	background:transparent;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box!important;
+}
+.RRMenu {
+	background-color: rgba(10,10,10,.5);
+}
+
+.RRMenu ul { 
+	font-size: 13px;
+	text-transform: uppercase;
+	margin: 10px 0 10px 0!important;
+}
+
+.RRMenu ul li {
+	display: inline-block;
+	background-image: none;
+	margin: 0; 
+}
+
+.RRMenu ul li a {
+	color: #FFF;
+}
+
+.RRMenu ul li a:hover {
+	color:rgb(223,137,44);
+}
+
+.featureContainer {
+	position: relative;
+}
+
+.features {
+	width: 100%;
+	height: auto;
+	margin: 20px 0 0px 0;
+}
+.featuresPager {
+	width: 200px;
+	position: relative;
+	top: -2em;
+	right: 1px;
+	z-index: 2000;
+}
+
+.featuresPager a { margin: 5px; background: #333; width: 10px; height: 10px; display: block; float: left; border-radius: 5px; border: 2px solid #999;}
+.featuresPager a.activeSlide { background: #999 }
+.featuresPager a:focus { outline: none; }
